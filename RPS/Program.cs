@@ -2,7 +2,7 @@
 string secondAllowedSign = "water";
 string thirdAllowedSign = "grass";
 
-Console.WriteLine("Zagrajmy w " + firstAllowedSign + " " + secondAllowedSign + " " + thirdAllowedSign);
+Console.WriteLine($"Zagrajmy w {firstAllowedSign} {secondAllowedSign} {thirdAllowedSign}");
 Console.WriteLine("Graczu 1, podaj znak");
 // typ nazwa;
 // typ nazwa = wartosc;
