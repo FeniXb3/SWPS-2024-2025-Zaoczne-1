@@ -10,7 +10,9 @@ string? firstSign = Console.ReadLine();
 // pętla while:
 // dopóki (warunek)
 // { działanie, które ma się powtarzać tak długo, jak warunek jest prawdziwy}
-while (firstSign != allowedSigns[0] && firstSign != allowedSigns[1] && firstSign != allowedSigns[2])
+
+// czepiaj się gracza, dopóki znak, który poda nie znajduje się w tablicy allowedSigns
+while (!allowedSigns.Contains(firstSign))
 {
     Console.WriteLine("Niepoprawny znak!");
     Console.WriteLine("Graczu 1, podaj POPRAWNY znak");
@@ -19,7 +21,7 @@ while (firstSign != allowedSigns[0] && firstSign != allowedSigns[1] && firstSign
 
 Console.WriteLine("Graczu 2, podaj znak");
 string? secondSign = Console.ReadLine();
-while (secondSign != allowedSigns[0] && secondSign != allowedSigns[1] && secondSign != allowedSigns[2])
+while (!allowedSigns.Contains(secondSign))
 {
     Console.WriteLine("Niepoprawny znak!");
     Console.WriteLine("Graczu 2, podaj POPRAWNY znak");
