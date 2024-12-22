@@ -5,6 +5,9 @@ Console.WriteLine("Graczu 1, podaj znak");
 // typ nazwa = wartosc;
 string? firstSign = Console.ReadLine();
 
+// pętla while:
+// dopóki (warunek)
+// { działanie, które ma się powtarzać tak długo, jak warunek jest prawdziwy}
 while (firstSign != "rock" && firstSign != "paper" && firstSign != "scissors")
 {
     Console.WriteLine("Niepoprawny znak!");
@@ -14,6 +17,12 @@ while (firstSign != "rock" && firstSign != "paper" && firstSign != "scissors")
 
 Console.WriteLine("Graczu 2, podaj znak");
 string? secondSign = Console.ReadLine();
+while (secondSign != "rock" && secondSign != "paper" && secondSign != "scissors")
+{
+    Console.WriteLine("Niepoprawny znak!");
+    Console.WriteLine("Graczu 2, podaj POPRAWNY znak");
+    secondSign = Console.ReadLine();
+}
 
 // if (instrukcja któej wynikiem będzie true lub false)
 if (firstSign == secondSign)
