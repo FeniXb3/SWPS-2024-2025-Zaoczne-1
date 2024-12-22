@@ -2,31 +2,9 @@
 string[] allowedSigns = ["fire", "water", "grass"];
 
 Console.WriteLine($"Zagrajmy w {string.Join(" ", allowedSigns)}");
-Console.WriteLine("Graczu 1, podaj znak");
-// typ nazwa;
-// typ nazwa = wartosc;
-string? firstSign = Console.ReadLine();
 
-// pętla while:
-// dopóki (warunek)
-// { działanie, które ma się powtarzać tak długo, jak warunek jest prawdziwy}
-
-// czepiaj się gracza, dopóki znak, który poda nie znajduje się w tablicy allowedSigns
-while (!allowedSigns.Contains(firstSign))
-{
-    Console.WriteLine("Niepoprawny znak!");
-    Console.WriteLine("Graczu 1, podaj POPRAWNY znak");
-    firstSign = Console.ReadLine();
-}
-
-Console.WriteLine("Graczu 2, podaj znak");
-string? secondSign = Console.ReadLine();
-while (!allowedSigns.Contains(secondSign))
-{
-    Console.WriteLine("Niepoprawny znak!");
-    Console.WriteLine("Graczu 2, podaj POPRAWNY znak");
-    secondSign = Console.ReadLine();
-}
+string firstSign = GetSign(1);
+string secondSign = GetSign(2);
 
 // if (instrukcja któej wynikiem będzie true lub false)
 if (firstSign == secondSign)
@@ -46,3 +24,19 @@ else
 
 
 Console.WriteLine("GG");
+
+
+// typ_zwracanych_danych NazwaMetody(typ_danej nazwa_danej, typ_danej nazwa_kolejnej_danej)
+string GetSign(int playerNumber)
+{
+    Console.WriteLine($"Graczu {playerNumber}, podaj znak");
+    string? sign = Console.ReadLine();
+    while (!allowedSigns.Contains(sign))
+    {
+        Console.WriteLine("Niepoprawny znak!");
+        Console.WriteLine($"Graczu {playerNumber}, podaj POPRAWNY znak");
+        sign = Console.ReadLine();
+    }
+
+    return sign;
+}
