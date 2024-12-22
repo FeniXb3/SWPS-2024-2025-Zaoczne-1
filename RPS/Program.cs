@@ -1,4 +1,7 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿string firstAllowedSign = "rock";
+string secondAllowedSign = "paper";
+string thirdAllowedSign = "scissors";
+
 Console.WriteLine("Zagrajmy w rock paper scissors");
 Console.WriteLine("Graczu 1, podaj znak");
 // typ nazwa;
@@ -8,7 +11,7 @@ string? firstSign = Console.ReadLine();
 // pętla while:
 // dopóki (warunek)
 // { działanie, które ma się powtarzać tak długo, jak warunek jest prawdziwy}
-while (firstSign != "rock" && firstSign != "paper" && firstSign != "scissors")
+while (firstSign != firstAllowedSign && firstSign != secondAllowedSign && firstSign != thirdAllowedSign)
 {
     Console.WriteLine("Niepoprawny znak!");
     Console.WriteLine("Graczu 1, podaj POPRAWNY znak");
@@ -17,7 +20,7 @@ while (firstSign != "rock" && firstSign != "paper" && firstSign != "scissors")
 
 Console.WriteLine("Graczu 2, podaj znak");
 string? secondSign = Console.ReadLine();
-while (secondSign != "rock" && secondSign != "paper" && secondSign != "scissors")
+while (secondSign != firstAllowedSign && secondSign != secondAllowedSign && secondSign != thirdAllowedSign)
 {
     Console.WriteLine("Niepoprawny znak!");
     Console.WriteLine("Graczu 2, podaj POPRAWNY znak");
@@ -29,9 +32,9 @@ if (firstSign == secondSign)
 {
     Console.WriteLine("Remis");
 }
-else if ((firstSign == "rock" && secondSign == "scissors") 
-        || (firstSign == "paper" && secondSign == "rock") 
-        || (firstSign == "scissors" && secondSign == "paper"))
+else if ((firstSign == firstAllowedSign && secondSign == thirdAllowedSign) 
+        || (firstSign == secondAllowedSign && secondSign == firstAllowedSign) 
+        || (firstSign == thirdAllowedSign && secondSign == secondAllowedSign))
 {
     Console.WriteLine("G1 MISZCZ!");
 }
