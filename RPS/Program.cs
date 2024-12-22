@@ -1,7 +1,7 @@
 ﻿                        // 0        1        2
 string[] allowedSigns = ["fire", "water", "grass"];
 
-Console.WriteLine($"Zagrajmy w {allowedSigns[0]} {allowedSigns[1]} {allowedSigns[2]}");
+Console.WriteLine($"Zagrajmy w {string.Join(" ", allowedSigns)}");
 Console.WriteLine("Graczu 1, podaj znak");
 // typ nazwa;
 // typ nazwa = wartosc;
