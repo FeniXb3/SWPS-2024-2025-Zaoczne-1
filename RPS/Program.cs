@@ -1,8 +1,7 @@
-﻿string firstAllowedSign = "fire";
-string secondAllowedSign = "water";
-string thirdAllowedSign = "grass";
+﻿                        // 0        1        2
+string[] allowedSigns = ["fire", "water", "grass"];
 
-Console.WriteLine($"Zagrajmy w {firstAllowedSign} {secondAllowedSign} {thirdAllowedSign}");
+Console.WriteLine($"Zagrajmy w {allowedSigns[0]} {allowedSigns[1]} {allowedSigns[2]}");
 Console.WriteLine("Graczu 1, podaj znak");
 // typ nazwa;
 // typ nazwa = wartosc;
@@ -11,7 +10,7 @@ string? firstSign = Console.ReadLine();
 // pętla while:
 // dopóki (warunek)
 // { działanie, które ma się powtarzać tak długo, jak warunek jest prawdziwy}
-while (firstSign != firstAllowedSign && firstSign != secondAllowedSign && firstSign != thirdAllowedSign)
+while (firstSign != allowedSigns[0] && firstSign != allowedSigns[1] && firstSign != allowedSigns[2])
 {
     Console.WriteLine("Niepoprawny znak!");
     Console.WriteLine("Graczu 1, podaj POPRAWNY znak");
@@ -20,7 +19,7 @@ while (firstSign != firstAllowedSign && firstSign != secondAllowedSign && firstS
 
 Console.WriteLine("Graczu 2, podaj znak");
 string? secondSign = Console.ReadLine();
-while (secondSign != firstAllowedSign && secondSign != secondAllowedSign && secondSign != thirdAllowedSign)
+while (secondSign != allowedSigns[0] && secondSign != allowedSigns[1] && secondSign != allowedSigns[2])
 {
     Console.WriteLine("Niepoprawny znak!");
     Console.WriteLine("Graczu 2, podaj POPRAWNY znak");
@@ -32,9 +31,9 @@ if (firstSign == secondSign)
 {
     Console.WriteLine("Remis");
 }
-else if ((firstSign == firstAllowedSign && secondSign == thirdAllowedSign) 
-        || (firstSign == secondAllowedSign && secondSign == firstAllowedSign) 
-        || (firstSign == thirdAllowedSign && secondSign == secondAllowedSign))
+else if ((firstSign == allowedSigns[0] && secondSign == allowedSigns[2]) 
+        || (firstSign == allowedSigns[1] && secondSign == allowedSigns[0]) 
+        || (firstSign == allowedSigns[2] && secondSign == allowedSigns[1]))
 {
     Console.WriteLine("G1 MISZCZ!");
 }
