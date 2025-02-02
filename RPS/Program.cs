@@ -43,6 +43,7 @@ string GetSign(int playerNumber)
 {
     Console.WriteLine($"Graczu {playerNumber}, podaj znak");
     string sign = Console.ReadLine() ?? string.Empty;
+    sign = sign.ToLower();
     while (!allowedSigns.Contains(sign))
     {
         Console.WriteLine("Niepoprawny znak!");
