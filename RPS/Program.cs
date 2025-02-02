@@ -7,7 +7,7 @@ string GetLowercaseInput()
 }
 
 Console.WriteLine("Graczu 1, jak masz na imię?");
-string? firstPlayerName = Console.ReadLine();
+string? firstPlayerName = Console.ReadLine()?.Trim();
 if (string.IsNullOrWhiteSpace(firstPlayerName))
 {
     firstPlayerName = "Seba";
@@ -15,7 +15,7 @@ if (string.IsNullOrWhiteSpace(firstPlayerName))
 }
 
 Console.WriteLine("Graczu 2, jak masz na imię?");
-string? secondPlayerName = Console.ReadLine();
+string? secondPlayerName = Console.ReadLine()?.Trim();
 if (string.IsNullOrWhiteSpace(secondPlayerName))
 {
     secondPlayerName = "Dżesika";
