@@ -6,6 +6,22 @@ string GetLowercaseInput()
     return Console.ReadLine()?.ToLower() ?? string.Empty;
 }
 
+Console.WriteLine("Graczu 1, jak masz na imię?");
+string? firstPlayerName = Console.ReadLine();
+if (string.IsNullOrWhiteSpace(firstPlayerName))
+{
+    firstPlayerName = "Seba";
+    Console.WriteLine($"Jak nie chcesz powiedzieć, jak się nazywasz, to nazwę Cię {firstPlayerName}");
+}
+
+Console.WriteLine("Graczu 2, jak masz na imię?");
+string? secondPlayerName = Console.ReadLine();
+if (string.IsNullOrWhiteSpace(secondPlayerName))
+{
+    secondPlayerName = "Dżesika";
+    Console.WriteLine($"Jak nie chcesz powiedzieć, jak się nazywasz, to nazwę Cię {secondPlayerName}");
+}
+
 Console.WriteLine("Do ilu punktów chcecie grać?");
 int defaultExpectedPoints = 3;
 if (!int.TryParse(Console.ReadLine(), out int expectedPoints))
@@ -20,8 +36,8 @@ Console.WriteLine($"Zagrajmy w {string.Join(" ", allowedSigns)}");
 
 while (firstPlayerPoints < expectedPoints && secondPlayerPoints < expectedPoints)
 {
-    string firstSign = GetSign(1);
-    string secondSign = GetSign(2);
+    string firstSign = GetSign(firstPlayerName);
+    string secondSign = GetSign(secondPlayerName);
 
     // if (instrukcja któej wynikiem będzie true lub false)
     if (firstSign == secondSign)
@@ -32,7 +48,7 @@ while (firstPlayerPoints < expectedPoints && secondPlayerPoints < expectedPoints
             || (firstSign == allowedSigns[1] && secondSign == allowedSigns[0])
             || (firstSign == allowedSigns[2] && secondSign == allowedSigns[1]))
     {
-        Console.WriteLine("G1 MISZCZ!");
+        Console.WriteLine($"{firstPlayerName} MISZCZ!");
         // poniższe trzy linijki robią to samo
         // to,z której skorzystasz zależy od konktekstu i tego,co chcesz osiągnąć
         // firstPlayerPoints = firstPlayerPoints - 1;
@@ -41,24 +57,24 @@ while (firstPlayerPoints < expectedPoints && secondPlayerPoints < expectedPoints
     }
     else
     {
-        Console.WriteLine("G2 MISZCZ!");
+        Console.WriteLine($"{secondPlayerName} MISZCZ!");
         secondPlayerPoints += 1;
     }
 
-    Console.WriteLine($"G1: {firstPlayerPoints} - G2: {secondPlayerPoints}");
+    Console.WriteLine($"{firstPlayerName}: {firstPlayerPoints} - {secondPlayerName}: {secondPlayerPoints}");
 }
 Console.WriteLine("GG");
 
 
 // typ_zwracanych_danych NazwaMetody(typ_danej nazwa_danej, typ_danej nazwa_kolejnej_danej)
-string GetSign(int playerNumber)
+string GetSign(string playerName)
 {
-    Console.WriteLine($"Graczu {playerNumber}, podaj znak");
+    Console.WriteLine($"{playerName}, podaj znak");
     string sign = GetLowercaseInput();
     while (!allowedSigns.Contains(sign))
     {
         Console.WriteLine("Niepoprawny znak!");
-        Console.WriteLine($"Graczu {playerNumber}, podaj POPRAWNY znak");
+        Console.WriteLine($"{playerName}, podaj POPRAWNY znak");
         sign = GetLowercaseInput();
     }
 
