@@ -7,7 +7,14 @@ string GetLowercaseInput()
 }
 
 Console.WriteLine("Do ilu punktów chcecie grać?");
-int expectedPoints = int.Parse(Console.ReadLine() ?? "0");
+int defaultExpectedPoints = 3;
+int expectedPoints;
+bool result = int.TryParse(Console.ReadLine(), out expectedPoints);
+if (result == false)
+{
+    expectedPoints = defaultExpectedPoints;
+    Console.WriteLine($"Niepoprawna wartość! Ustawiamy oczekiwaną liczbę punktów na {expectedPoints}");
+}
 int firstPlayerPoints = 0;
 int secondPlayerPoints = 0;
 
