@@ -42,12 +42,12 @@ Console.WriteLine("GG");
 string GetSign(int playerNumber)
 {
     Console.WriteLine($"Graczu {playerNumber}, podaj znak");
-    string? sign = Console.ReadLine();
+    string sign = Console.ReadLine() ?? string.Empty;
     while (!allowedSigns.Contains(sign))
     {
         Console.WriteLine("Niepoprawny znak!");
         Console.WriteLine($"Graczu {playerNumber}, podaj POPRAWNY znak");
-        sign = Console.ReadLine();
+        sign = Console.ReadLine() ?? string.Empty;
     }
 
     return sign;
