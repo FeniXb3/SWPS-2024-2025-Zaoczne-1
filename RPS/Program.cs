@@ -6,7 +6,8 @@ string GetLowercaseInput()
     return Console.ReadLine()?.ToLower() ?? string.Empty;
 }
 
-int expectedPoints = 3;
+Console.WriteLine("Do ilu punktów chcecie grać?");
+int expectedPoints = int.Parse(Console.ReadLine() ?? "0");
 int firstPlayerPoints = 0;
 int secondPlayerPoints = 0;
 
